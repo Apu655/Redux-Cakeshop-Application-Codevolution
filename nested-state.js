@@ -1,5 +1,7 @@
 const redux = require("redux")
 const produce = require("immer").produce
+const reduxLogger = require("redux-logger")
+const logger = reduxLogger.createLogger()
 
 
 
