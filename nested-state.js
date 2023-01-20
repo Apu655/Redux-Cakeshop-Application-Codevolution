@@ -2,6 +2,7 @@ const redux = require("redux")
 const produce = require("immer").produce
 const reduxLogger = require("redux-logger")
 const logger = reduxLogger.createLogger()
+const applyMiddleware = redux.applyMiddleware
 
 
 
@@ -42,7 +43,7 @@ const reducer = (state =initialState,action)=>{
     }
 }
 
-const store = redux.createStore(reducer)
+const store = redux.createStore(reducer, applyMiddleware(logger))
 console.log("Initial State", store.getState())
 const unsubscribe = store.subscribe(()=>{console.log("Update: ",store.getState())})
 store.dispatch(updateStreet("Baker Street"))
