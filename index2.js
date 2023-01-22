@@ -1,7 +1,10 @@
 const redux = require("redux")
 const bindActionCreators = redux.bindActionCreators
 const combineReducers = redux.combineReducers
+const applyMiddleware = redux.applyMiddleware
 const createStore = redux.createStore
+const reduxLogger = require("redux-logger")
+const logger = reduxLogger.createLogger()
 
 
 
@@ -46,8 +49,8 @@ function orderCakeReducer(state = initialState,action){
     }
 }
 
-const store = createStore(orderCakeReducer)
-const unsubscribe = store.subscribe(()=>{console.log("Upadte State:", store.getState())})
+const store = createStore(orderCakeReducer, applyMiddleware(logger))
+const unsubscribe = store.subscribe(()=>{})
 console.log("Initial State :", store.getState())
 store.dispatch(orderCake())
 store.dispatch(buyCake())
