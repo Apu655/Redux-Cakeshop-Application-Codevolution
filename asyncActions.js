@@ -51,7 +51,7 @@ const reducer = (state=initialState,action)=>{
             return{
                 loading:true,
                 users:[],
-                payload:error,
+                error:action.payload,
             }
     }
 }
@@ -59,7 +59,7 @@ const reducer = (state=initialState,action)=>{
 const fetchUsers = ()=>{
     return function(dispatch){
         dispatch(fetchUsersRequest())
-        axios.get("https://jsonplaceholder.typicode.com/users")
+        axios.get("https://jsonplaceholder.typicode.com/users2")
         .then(res=>{
             // response.data is the array of users
             const users = res.data.map(user=>user.id)
@@ -67,6 +67,7 @@ const fetchUsers = ()=>{
         })
         .catch(error=>{
             // error.message gives the description of the error.
+            dispatch(fetchUsersFailure(error.message))
         })
     }
 }
