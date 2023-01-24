@@ -1,7 +1,7 @@
 import React from 'react'
 import {buyIceCream} from "../redux/index"
 import { useDispatch, useSelector } from 'react-redux'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 const IceCreamContainer = (props) => {
     const state = useSelector(state=>state)
