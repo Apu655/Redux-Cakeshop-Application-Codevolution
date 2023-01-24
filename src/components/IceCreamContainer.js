@@ -31,4 +31,4 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps,
 ) (CakeContainer)
-export default IceCreamContainer
+// export default IceCreamContainer
