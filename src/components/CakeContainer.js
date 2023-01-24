@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 const CakeContainer = (props) => {
   return (
     <div>
-        <h2>Number of cakes in this state: {props.numOfCakes}</h2>
-        <button onClick={()=>props.buyCake()}>Buy Cake</button>
+        <h2>Number of cakes in this state: {props.cake.numOfCakes}</h2>
+        <button onClick={()=>props.cake.buyCake()}>Buy Cake</button>
     </div>
   )
 }
@@ -28,3 +28,4 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps,
 ) (CakeContainer)
+// export default CakeContainer

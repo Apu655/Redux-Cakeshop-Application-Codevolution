@@ -13,3 +13,5 @@ const IceCreamReducer = (state=initialState,action)=>{
     }
 
 }
+
+export default IceCreamReducer
