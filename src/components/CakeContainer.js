@@ -3,6 +3,7 @@ import {buyCake} from "../redux/index"
 import { connect } from 'react-redux'
 
 const CakeContainer = (props) => {
+    console.log("Hello")
   return (
     <div>
         <h2>Number of cakes in this state: {props.cake.numOfCakes}</h2>
